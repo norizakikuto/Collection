@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Chapter5 {
 
-	public static void main(String[] args) {
+	public static <T> void main(String[] args) {
 		
 		LocalDate date1 = LocalDate.parse("2021/10/21",DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 		LocalDate date2 = LocalDate.parse("2021/09/15",DateTimeFormatter.ofPattern("yyyy/MM/dd"));
@@ -21,10 +21,13 @@ public class Chapter5 {
 		tasks.add(new Task(date3,"手帳を買う"));
 		tasks.add(new Task(date4,"散髪に行く"));
 		tasks.add(new Task(date5,"スクールの課題を解く"));
-
-		Collections.sort(tasks);
-		System.out.println(tasks);
 		
+		Collections.sort(tasks);
+		
+		for(int num = 0; num < 5; num++) {
+			System.out.print(tasks.get(num).getDate() + ":");
+			System.out.println(tasks.get(num).getTask());
+		}
 		
 		
 	}

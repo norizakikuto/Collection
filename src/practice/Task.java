@@ -1,8 +1,7 @@
 package practice;
 import java.time.LocalDate;
 
-
-public class Task {
+public class Task implements Comparable<Task>{
 	private LocalDate date;
 	private String task;
 	public Task(LocalDate date,String task){
@@ -23,7 +22,9 @@ public class Task {
 		this.task = task;
 	}
 	
+	@Override
+	public int compareTo(Task t) {
+		return date.compareTo(t.date);
+	}
 	
-	
-
 }

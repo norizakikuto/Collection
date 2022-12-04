@@ -24,7 +24,7 @@ public class Chapter5 {
 		
 		Collections.sort(tasks);
 		
-		for(int num = 0; num < 5; num++) {
+		for(int num = 0; num < tasks.size(); num++) {
 			System.out.print(tasks.get(num).getDate() + ":");
 			System.out.println(tasks.get(num).getTask());
 		}
